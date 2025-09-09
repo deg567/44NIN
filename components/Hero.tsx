@@ -6,7 +6,7 @@ export default function Hero() {
           WE ARE 44NIN RUNNERS
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-neutral-200">
-          한국인삼공사 최초 사내 러닝 동호회 — 회원가입 없이 스케줄·코스·갤러리를 한 번에.
+          한국인삼공사 최초 사내 러닝 동호회
         </p>
         <a
           href="#join"
