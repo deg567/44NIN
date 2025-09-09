@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "hangang-a",
+    "title": "한강 A 코스",
+    "distance_km": 6.5,
+    "elevation_m": 20,
+    "difficulty": "쉬움",
+    "meeting": "본사 앞 광장",
+    "gpx": "/routes/sample.gpx",
+    "image": "/courses/hangang-a.jpg"
+  },
+  {
+    "slug": "city-n",
+    "title": "도심 N 코스",
+    "distance_km": 8.0,
+    "elevation_m": 60,
+    "difficulty": "보통",
+    "meeting": "시청 앞",
+    "gpx": "/routes/sample.gpx",
+    "image": "/courses/city-n.jpg"
+  }
+]
+
