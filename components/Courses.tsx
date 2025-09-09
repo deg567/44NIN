@@ -14,6 +14,7 @@ type Course = {
 
 export default function Courses() {
   const list = courses as Course[]
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {list.map((c) => (
@@ -28,7 +29,7 @@ export default function Courses() {
               상세보기
             </Link>
             {c.gpx ? (
-              <a href={c.gpx} className="text-sm text-neutral-700 hover:underline" download>
+              <a href={`${basePath}${c.gpx}`} className="text-sm text-neutral-700 hover:underline" download>
                 GPX 다운로드
               </a>
             ) : null}
@@ -38,4 +39,3 @@ export default function Courses() {
     </div>
   )
 }
-

@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import data from '@/content/courses.json'
 import type { Course } from '@/lib/types'
 
@@ -16,7 +17,7 @@ export default function CourseDetail({ params }: Params) {
 
   return (
     <main className="container py-12">
-      <a href="/" className="text-sm text-neutral-600 hover:underline">← 돌아가기</a>
+      <Link href="/" className="text-sm text-neutral-600 hover:underline">← 돌아가기</Link>
       <h1 className="mt-2 text-3xl font-bold">{course.title}</h1>
       <p className="mt-2 text-neutral-700">
         거리 {course.distance_km}km · 고도 {course.elevation_m ?? 0}m · {course.difficulty ?? '보통'}
@@ -24,7 +25,7 @@ export default function CourseDetail({ params }: Params) {
       <div className="mt-6 aspect-video w-full rounded bg-neutral-100" />
       <div className="mt-6 flex gap-4">
         {course.gpx ? (
-          <a className="text-brand-red hover:underline" href={course.gpx} download>
+          <a className="text-brand-red hover:underline" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${course.gpx}`} download>
             GPX 다운로드
           </a>
         ) : null}
@@ -35,4 +36,3 @@ export default function CourseDetail({ params }: Params) {
     </main>
   )
 }
-

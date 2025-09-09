@@ -1,9 +1,10 @@
-import { getSchedule } from '@/lib/schedule'
 import type { ScheduleItem } from '@/lib/types'
+import fallback from '@/content/schedule.json'
 
-export default async function Schedule() {
-  const items: ScheduleItem[] = await getSchedule({ weeks: 6, limit: 6 })
-  const icalUrl = process.env.ICAL_URL
+// Static-export friendly Schedule: uses local JSON only.
+export default function Schedule() {
+  const items: ScheduleItem[] = (fallback as ScheduleItem[]).slice(0, 6)
+  const icalUrl = process.env.NEXT_PUBLIC_ICAL_URL
 
   if (!items.length) {
     return (
