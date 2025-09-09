@@ -1,15 +1,14 @@
 [
   {
-    "src": "/gallery/2024-09-12-1.jpg",
-    "alt": "목요 나이트런 하이라이트"
+    "src": "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?q=80&w=1600&auto=format&fit=crop",
+    "alt": "일몰 도로 러닝"
   },
   {
-    "src": "/gallery/2024-09-15-1.jpg",
-    "alt": "일요 롱런 하이라이트"
+    "src": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=1600&auto=format&fit=crop",
+    "alt": "도심 그룹 러닝"
   },
   {
-    "src": "/gallery/2024-09-15-2.jpg",
-    "alt": "브릿지 셀피"
+    "src": "https://images.unsplash.com/photo-1517960413843-0aee8e9fd1db?q=80&w=1600&auto=format&fit=crop",
+    "alt": "브릿지 야간 러닝"
   }
 ]
-

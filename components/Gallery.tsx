@@ -44,12 +44,9 @@ export default function Gallery() {
             }}
             aria-label={`${p.alt} 확대 보기`}
           >
-            <div className="absolute inset-0 flex items-center justify-center text-[11px] text-neutral-500">
-              {/* 실제 이미지를 public/gallery 에 넣으면 아래 Image로 표시됩니다. */}
-              <span className="group-hover:opacity-0 transition-opacity">{p.alt}</span>
+            <div className="absolute inset-0">
+              <Image src={p.src} alt={p.alt} fill className="object-cover" sizes="(max-width:768px) 50vw, 25vw" />
             </div>
-            {/* 썸네일 이미지가 준비되면 주석을 해제하세요. */}
-            {/* <Image src={p.src} alt={p.alt} fill className="object-cover" sizes="(max-width:768px) 50vw, 25vw" /> */}
             <span className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/5 group-hover:ring-brand-red/50" />
           </button>
         ))}

@@ -16,7 +16,9 @@ const nextConfig = {
   images: {
     // Next/Image in export mode must be unoptimized
     unoptimized: true,
-    remotePatterns: [],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'images.unsplash.com' },
+    ],
   },
   async headers() {
     return [
