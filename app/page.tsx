@@ -1,3 +1,5 @@
+export const revalidate = 3600
+
 import Hero from '@/components/Hero'
 import Schedule from '@/components/Schedule'
 import Courses from '@/components/Courses'
@@ -36,4 +38,3 @@ export default function HomePage() {
     </main>
   )
 }
-
