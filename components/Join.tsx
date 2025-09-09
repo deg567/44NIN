@@ -1,4 +1,5 @@
 export default function Join() {
+  const joinHref = process.env.NEXT_PUBLIC_JOIN_LINK || '#'
   return (
     <div id="join" className="rounded-lg border p-6">
       <h3 className="text-xl font-semibold">함께 뛰기 / 문의</h3>
@@ -7,16 +8,15 @@ export default function Join() {
       </p>
       <div className="mt-4 flex gap-3">
         <a
-          href="#"
+          href={joinHref}
           className="rounded bg-brand-red px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
         >
           사내 메신저 합류
         </a>
-        <a href="#" className="text-sm text-neutral-700 hover:underline">
+        <a href={joinHref} className="text-sm text-neutral-700 hover:underline">
           공지 채널 열기
         </a>
       </div>
     </div>
   )
 }
-
