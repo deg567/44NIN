@@ -24,10 +24,10 @@ function toISODate(d: Date) {
   return d.toISOString().slice(0, 10)
 }
 
-async function fetchICS(url: string): Promise<ScheduleItem[]> {
+async function fetchICS(url: string, weeks: number): Promise<ScheduleItem[]> {
   const events = await ical.async.fromURL(url)
   const today = startOfToday()
-  const windowEnd = addWeeks(today, 6)
+  const windowEnd = addWeeks(today, weeks)
 
   const items: ScheduleItem[] = Object.values(events)
     .filter((e: any) => e.type === 'VEVENT' && e.start)
@@ -77,18 +77,8 @@ export async function GET(request: Request) {
 
     if (icalUrl) {
       try {
-        // Fetch ICS then re-apply weeks window if different from default 6
-        const all = await fetchICS(icalUrl)
-        if (weeks !== 6) {
-          const today = startOfToday()
-          const windowEnd = addWeeks(today, weeks)
-          items = all.filter((it) => {
-            const d = new Date(it.date + 'T' + (it.time || '00:00'))
-            return isAfter(d, today) && isBefore(d, windowEnd)
-          })
-        } else {
-          items = all
-        }
+        const all = await fetchICS(icalUrl, weeks)
+        items = all
       } catch (e) {
         // Fallback to local JSON on failure
         const parsed = z.array(ScheduleItemSchema).safeParse(fallback)
@@ -122,4 +112,3 @@ export async function GET(request: Request) {
     )
   }
 }
-
