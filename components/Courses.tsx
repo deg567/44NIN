@@ -18,7 +18,10 @@ export default function Courses() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {list.map((c) => (
-        <article key={c.slug} className="rounded-lg border p-4">
+        <article
+          key={c.slug}
+          className="rounded-lg border p-4 transition-transform duration-200 will-change-transform hover:-translate-y-1 hover:shadow-xl"
+        >
           <div className="aspect-video w-full rounded bg-neutral-100 mb-3" />
           <h3 className="font-semibold text-lg">{c.title}</h3>
           <p className="text-sm text-neutral-600">

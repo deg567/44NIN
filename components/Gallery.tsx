@@ -33,11 +33,11 @@ export default function Gallery() {
 
   return (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+      <div className="-mx-2 px-2 flex gap-2 overflow-x-auto snap-x-container scrollbar-none">
         {items.map((p, i) => (
           <button
             key={`${p.src}-${i}`}
-            className="group aspect-square relative block overflow-hidden rounded bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-brand-red"
+            className="snap-item group relative block overflow-hidden rounded bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-brand-red min-w-[70%] sm:min-w-[40%] md:min-w-[28%] aspect-[4/3]"
             onClick={() => {
               setIndex(i)
               setOpen(true)
@@ -45,7 +45,7 @@ export default function Gallery() {
             aria-label={`${p.alt} 확대 보기`}
           >
             <div className="absolute inset-0">
-              <Image src={p.src} alt={p.alt} fill className="object-cover" sizes="(max-width:768px) 50vw, 25vw" />
+              <Image src={p.src} alt={p.alt} fill className="object-cover" sizes="(max-width:768px) 70vw, 28vw" />
             </div>
             <span className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/5 group-hover:ring-brand-red/50" />
           </button>

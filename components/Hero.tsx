@@ -1,7 +1,9 @@
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand-dark text-white">
-      <div className="container py-24 sm:py-32">
+    <section className="hero-kinetic bg-brand-dark text-white">
+      <div className="hero-kinetic__bg" aria-hidden />
+      <div className="hero-kinetic__stripes" aria-hidden />
+      <div className="container py-24 sm:py-32 relative">
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
           WE ARE 44NIN RUNNERS
         </h1>
@@ -10,11 +12,12 @@ export default function Hero() {
         </p>
         <a
           href="#join"
-          className="mt-8 inline-block rounded bg-brand-red px-5 py-3 text-sm font-semibold text-white hover:opacity-90"
+          className="mt-8 inline-block rounded bg-brand-red px-5 py-3 text-sm font-semibold text-white hover:shadow-lg active:scale-95 transition will-change-transform"
         >
           함께 뛰기
         </a>
       </div>
+      <div className="hero-kinetic__glow" aria-hidden />
     </section>
   )
 }

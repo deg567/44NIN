@@ -15,3 +15,59 @@ body {
   @apply mx-auto max-w-6xl px-4;
 }
 
+/* —— Kinetic hero background (도시 네온 무드) —— */
+.hero-kinetic {
+  position: relative;
+  overflow: hidden;
+}
+.hero-kinetic__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(226,0,33,0.25), transparent 60%),
+              radial-gradient(900px 600px at 90% 30%, rgba(255,255,255,0.08), transparent 60%),
+              linear-gradient(120deg, #0d0d0d 0%, #151515 50%, #0d0d0d 100%);
+  background-size: 200% 200%, 180% 180%, 100% 100%;
+  animation: heroBgShift 18s ease-in-out infinite alternate;
+}
+.hero-kinetic__stripes {
+  position: absolute;
+  inset: -20%;
+  background-image: repeating-linear-gradient(-20deg, rgba(255,255,255,0.06) 0 6px, transparent 6px 26px);
+  animation: stripesMove 16s linear infinite;
+  mix-blend-mode: overlay;
+  opacity: 0.18;
+}
+.hero-kinetic__glow {
+  position: absolute;
+  bottom: -4rem;
+  left: -10%;
+  right: -10%;
+  height: 10rem;
+  background: radial-gradient(60% 120% at 50% 0%, rgba(226,0,33,0.28), transparent 70%);
+  filter: blur(24px);
+}
+@keyframes heroBgShift {
+  0%   { background-position: 0% 0%, 100% 0%, 0 0; }
+  100% { background-position: 100% 100%, 0% 100%, 0 0; }
+}
+@keyframes stripesMove {
+  0%   { background-position: 0 0; }
+  100% { background-position: 600px 0; }
+}
+
+/* 모션 최소화 환경 대응 */
+@media (prefers-reduced-motion: reduce) {
+  .hero-kinetic__bg,
+  .hero-kinetic__stripes { animation: none; }
+}
+
+/* 수평 스크롤 스냅 갤러리 */
+.snap-x-container {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.snap-item {
+  scroll-snap-align: start;
+}
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
