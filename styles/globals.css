@@ -71,3 +71,23 @@ body {
 }
 .scrollbar-none::-webkit-scrollbar { display: none; }
 .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* —— Sticky header —— */
+.header-shell {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.header-scrolled {
+  background: rgba(0,0,0,0.7);
+}
+.link-nav {
+  @apply text-neutral-200 hover:text-white;
+}
+.link-cta {
+  @apply rounded bg-brand-red px-3 py-1.5 font-semibold text-white hover:opacity-90;
+}
+
+/* —— Sticky scenes —— */
+.sticky-section { position: relative; }
+.sticky-inner { position: sticky; height: calc(100vh - 56px); }

@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { Metadata } from 'next'
 import { Noto_Sans_KR, Inter } from 'next/font/google'
+import Header from '@/components/Header'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 const noto = Noto_Sans_KR({ subsets: ['latin'], weight: ['400','500','700'], display: 'swap' })
@@ -27,7 +28,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <body className={`${inter.className} ${noto.className}`}>
-        {children}
+        <Header />
+        <div style={{ paddingTop: '56px' }}>
+          {children}
+        </div>
       </body>
     </html>
   )

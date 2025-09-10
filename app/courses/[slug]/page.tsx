@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import data from '@/content/courses.json'
 import type { Course } from '@/lib/types'
+import RouteTrace from '@/components/RouteTrace'
 
 type Params = { params: { slug: string } }
 
@@ -23,6 +24,9 @@ export default function CourseDetail({ params }: Params) {
         거리 {course.distance_km}km · 고도 {course.elevation_m ?? 0}m · {course.difficulty ?? '보통'}
       </p>
       <div className="mt-6 aspect-video w-full rounded bg-neutral-100" />
+      {course.gpx ? (
+        <RouteTrace gpxUrl={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${course.gpx}`} />
+      ) : null}
       <div className="mt-6 flex gap-4">
         {course.gpx ? (
           <a className="text-brand-red hover:underline" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}${course.gpx}`} download>

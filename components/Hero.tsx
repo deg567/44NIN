@@ -1,4 +1,5 @@
 import Parallax from './Parallax'
+import Countdown from './Countdown'
 
 export default function Hero() {
   return (
@@ -16,6 +17,7 @@ export default function Hero() {
         <p className="mt-4 max-w-2xl text-lg text-neutral-200">
           한국인삼공사 최초 사내 러닝 동호회
         </p>
+        <Countdown />
         <a
           href="#join"
           className="mt-8 inline-block rounded bg-brand-red px-5 py-3 text-sm font-semibold text-white hover:shadow-lg active:scale-95 transition will-change-transform"
