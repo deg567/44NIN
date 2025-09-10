@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 
 test('홈 스모크: 핵심 섹션 렌더', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('./')
 
   await expect(page.getByRole('heading', { name: 'WE ARE 44NIN RUNNERS' })).toBeVisible()
   await expect(page.getByRole('heading', { name: '이번 주 일정' })).toBeVisible()
@@ -12,4 +12,3 @@ test('홈 스모크: 핵심 섹션 렌더', async ({ page }) => {
   // 일정 샘플 항목 존재 확인(정적 JSON 기준)
   await expect(page.getByText('목요 나이트런')).toBeVisible()
 })
-
