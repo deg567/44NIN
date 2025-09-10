@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 type Props = {
-  children: React.ReactNode
+  children?: React.ReactNode
   className?: string
   /** 양수일수록 더 많이 이동 (기본 0.12) */
   speed?: number
@@ -48,4 +48,3 @@ export default function Parallax({ children, className = '', speed = 0.12, max =
     </div>
   )
 }
-
